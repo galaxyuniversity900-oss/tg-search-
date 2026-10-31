@@ -1,0 +1,26 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f7f9;--card:#fff;--tx:#1b1f24;--mut:#667085;--ac:#229ed9;--bd:#e3e6ea;--ok:#1a9c5b;--bad:#d64545;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171a;--card:#1e2328;--tx:#eceff2;--mut:#98a2b3;--bd:#2c333a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171a;--card:#1e2328;--tx:#eceff2;--mut:#98a2b3;--bd:#2c333a;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif}
+main{max-width:760px;margin:0 auto;padding:14px}
+h1{font-size:20px;margin:2px 0 10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.row{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap}
+.tabs{flex-wrap:nowrap;overflow-x:auto}
+input,select,button{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:9px 12px}
+input[type=text],input[type=search]{flex:1;min-width:150px}
+input[type=number]{width:110px}
+button{cursor:pointer}button:disabled{opacity:.5;cursor:default}
+.p,.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.chip{border-radius:99px;padding:6px 12px;font-size:14px;white-space:nowrap}
+.pill{font-size:12px;border-radius:99px;padding:2px 10px;border:1px solid var(--bd);color:var(--mut)}
+.pill.ok{color:var(--ok);border-color:var(--ok)}.pill.bad{color:var(--bad);border-color:var(--bad)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 12px;margin:8px 0}
+.card a{color:var(--ac);font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.m{color:var(--mut);font-size:13px;overflow-wrap:anywhere}.d{font-size:14px;margin:4px 0;overflow-wrap:anywhere}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:8px 12px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+.msg{padding:14px;text-align:center;color:var(--mut)}
+[hidden]{display:none!important}
+label.m{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+pre{font-size:12px;max-height:220px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;margin:6px 0 0}
