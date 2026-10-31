@@ -1,0 +1,9 @@
+{
+  "name": "TG-Atlas Telegram Discovery",
+  "short_name": "TG-Atlas",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b1117",
+  "theme_color": "#101820",
+  "description": "Discover public Telegram channels, groups, bots and posts."
+}

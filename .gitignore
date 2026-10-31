@@ -1,5 +1,13 @@
-# Object file
-*.o
-
-# Ada Library Information
-*.ali
+# Local Telegram credentials and account session data
+server/tg_atlas_config.json
+tg_atlas_config.json
+*.session
+*.session-journal
+tg_atlas.db
+*.db
+results/
+atlas.log
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db

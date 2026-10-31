@@ -70,7 +70,8 @@ async function searchOne(q,types){
  return{n,more,err,own}}
 async function live(){
  const q=$("q").value.trim(),my=++seq;curQ=q;shown=40;
- if(!q){hits=new Map();posts=[];render();setSt(idx.size?idx.size+" saved in your index":"Type to search Telegram.");return}
+ if(!q){hits=new Map();posts=[];render();setSt(idx.size?idx.size+" saved in your index":"Type to search Telegram.");
+if("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(()=>{});return}
  if(!ready()){setSt(mode==="bridge"?"Connect to the Telegram API first (top of the page).":"Tele is not available here.");return}hits=new Map();
  setSt("Searching…");
  try{

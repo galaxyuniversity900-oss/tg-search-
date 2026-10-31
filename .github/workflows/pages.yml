@@ -1,0 +1,34 @@
+name: Deploy TG-Atlas to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate site and Python syntax
+        run: |
+          test -f index.html && test -f app.js && test -f style.css && test -f server/tg_atlas.py
+          python -c "import ast,pathlib; ast.parse(pathlib.Path('server/tg_atlas.py').read_text(encoding='utf-8')); print('Python syntax OK')"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+  deploy:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
